@@ -4,8 +4,6 @@ vcffile = args[1]
 radius = as.numeric(args[2])
 genes = args[3]
 doVariants  <- function(vcffile,radius,genes){
-   #library(BiocManager)
-   #BiocManager::install("variants",version="3.9")
    library(variants)
    r = as.numeric(radius)
    file <- system.file('vcf', vcffile, package = 'cgdv17')
@@ -26,7 +24,5 @@ doVariants  <- function(vcffile,radius,genes){
    print(as.data.frame(ans))
 
 }
-#vcffile = args[1]
-#radius = args[2]
-#genes = args[3]
+
 doVariants(vcffile,radius,genes)
