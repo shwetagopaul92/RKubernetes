@@ -1,7 +1,7 @@
 jobyaml = 'apiVersion: batch/v1
 kind: Job
 metadata:
-  name: annotate-variant
+  name: annotate-variant-%i
 spec:
   template:
     metadata:
@@ -25,7 +25,7 @@ createJobs <- function(vcfs, radius, genes){
   print(mydir)
   for(i in 1:length(vcfs)){
     fname = paste0(mydir,"/variantjob",i,".yaml")
-    temp = sprintf(jobyaml,vcfs[i],radius,paste(genes,collapse=","))
+    temp = sprintf(jobyaml,i,vcfs[i],radius,paste(genes,collapse=","))
     writeLines(temp,fname)
   }
 }
