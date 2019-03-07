@@ -50,7 +50,9 @@ General procedure to create, run, monitor jobs on Kubernetes
 > kubectl describe pods
 
 > kubectl get nodes
+
 > kubectl delete job "jobname"
+
 > kubectl logs "podname" (can be got from "Events" when we run kubectl describe jobs) 
 
 Kubernetes clusters can be deleted on the Kubernetes Engine Google Cloud console. 
