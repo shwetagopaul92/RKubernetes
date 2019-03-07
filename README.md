@@ -2,16 +2,15 @@
 
 # To submit a variant annotation job to Kubernetes 
 
-- Create a kubernetes cluster "variants"
-# create 4 node cluster "variants" on google kubernetes engine
-gcloud container clusters create variants --machine-type n1-standard-1 --num-nodes 4
+- Create 4 node cluster "variants" on google kubernetes engine
+> gcloud container clusters create variants --machine-type n1-standard-1 --num-nodes 4
 
-# get credentials to point kubectl to our cluster
-gcloud container clusters get-credentials kubepar
+- Get credentials to point kubectl to our cluster
+> gcloud container clusters get-credentials kubepar
 
-1. In R, source runJob.R
-2. Point to the directory structure shown
-3. Create jobs for the .yaml files 
+- In R, source runJob.R
+- Point to the directory structure shown
+- Create jobs for the .yaml files 
 > kubectl create -f job1.yaml 
 or 
 > kubectl create -f . (to create jobs for all the .yaml file present in the directory)
@@ -33,12 +32,14 @@ General procedure to create, run, monitor jobs on Kubernetes
 - Install kubectl (https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - Follow these steps (change cluster name and job file as required) 
 
-# create 4 node cluster "kubepar" on google kubernetes engine
-gcloud container clusters create kubepar --machine-type n1-standard-1 --num-nodes 4
-# get credentials to point kubectl to our cluster
-gcloud container clusters get-credentials kubepar
-# create job
-kubectl create -f job.yaml
+- Create 4 node cluster "kubepar" on google kubernetes engine
+> gcloud container clusters create kubepar --machine-type n1-standard-1 --num-nodes 4
+
+- Get credentials to point kubectl to our cluster
+> gcloud container clusters get-credentials kubepar
+
+- Create job
+> kubectl create -f job.yaml
 
 # Monitor pods, jobs, nods with kubectl 
 
