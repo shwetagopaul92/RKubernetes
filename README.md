@@ -46,7 +46,9 @@ General procedure to create, run, monitor jobs on Kubernetes
 ## Cheatsheet for some kubectl commands 
 
 > kubectl describe jobs
+
 > kubectl describe pods
+
 > kubectl get nodes
 > kubectl delete job "jobname"
 > kubectl logs "podname" (can be got from "Events" when we run kubectl describe jobs) 
